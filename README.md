@@ -18,3 +18,7 @@ python -m pip install watchdog
 ```
 
 Pythonスクリプトとpoppler-0.xx.0フォルダ、imgフォルダを同じ階層に置く。
+
+```\\path_to\\\pdf_to_email.py```で監視開始。```\\\\SHARED-FOLDER\\fax```にPDFが生成されたら発火。
+
+注文書のテンプレートは[こちら](https://illustfree.jp/2978/)を利用。
