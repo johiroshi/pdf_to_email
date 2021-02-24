@@ -51,7 +51,7 @@ def converPDFAndSendEMail(pdf_file_path):
     pages = convert_from_path(str(pdf_path), 150)
 
     # 画像ファイルを１ページずつ保存
-    image_dir = Path(wdDirectory + "\\img")
+    image_dir = Path(wdDirectory + "\\pdf_to_email\\img")
     for i, page in enumerate(pages):
         file_name = pdf_path.stem + "_{:02d}".format(i + 1) + ".png"
         image_path = image_dir / file_name
