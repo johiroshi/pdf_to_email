@@ -74,6 +74,7 @@ def converPDFAndSendEMail(pdf_file_path):
           r'\1\2', result)
 
     type = "注文書" if len(re.findall('注文書|発注書|注文申し上げます', result)) > 0 else "不明"
+    type = "見積書" if len(re.findall('見積', result)) > 0 else "不明"
 
     print("種類： " + type)
 
