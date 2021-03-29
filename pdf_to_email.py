@@ -32,8 +32,9 @@ class ChangeHandler(FileSystemEventHandler):
 
     # 作成された時のイベント
     def on_created(self, event):
-        print(datetime.datetime.now().strftime('%Y年%m月%d日 %H:%M:%S') + "：新しいファイルを検出しました。")
         file_path = event.src_path
+        print(datetime.datetime.now().strftime('%Y年%m月%d日 %H:%M:%S') + "：新しいファイルを検出しました。")
+        print("パス： " + file_path)
         file_name = os.path.basename(file_path)
         root, ext = os.path.splitext(file_path)
         if ext == ".pdf":
@@ -44,8 +45,6 @@ class ChangeHandler(FileSystemEventHandler):
 
 def converPDFAndSendEMail(pdf_file_path):
     pdf_path = Path(pdf_file_path)
-
-    print("パス： " + pdf_file_path)
 
     # PDF -> Image に変換（150dpi）
     pages = convert_from_path(str(pdf_path), 150)
