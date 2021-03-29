@@ -39,6 +39,7 @@ class ChangeHandler(FileSystemEventHandler):
         root, ext = os.path.splitext(file_path)
         if ext == ".pdf":
             print("PDFファイルです。OCR処理を開始します")
+            time.sleep(3)
             converPDFAndSendEMail(file_path)
         else:
             print("PDFではありません。")
