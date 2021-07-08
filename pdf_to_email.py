@@ -67,7 +67,7 @@ def converPDFAndSendEMail(pdf_file_path):
     img_org = Image.open(image_path)
 
     # ＯＣＲ実行
-    builder = pyocr.builders.TextBuilder()
+    builder = pyocr.builders.TextBuilder(tesseract_layout=12)
     result = tool.image_to_string(img_org, lang="jpn", builder=builder)
     result = re.sub(r"\n+", "", result)
     result = re.sub('([あ-んア-ン一-龥ー、。]) +((?=[あ-んア-ン一-龥ー、。]))',
